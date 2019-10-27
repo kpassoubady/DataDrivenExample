@@ -14,6 +14,7 @@ node('win') {
                 "PATH=$javaHome\bin:$PATH"
         ]) {
             bat(/"%MVN_HOME%\bin\mvn" -Dmaven.test.failure.ignore clean/)
+            sleep 1
             parallel allure: {
                 bat(/"%MVN_HOME%\bin\mvn" -Dmaven.test.failure.ignore test -P allure-example/)
             }, extent: {
