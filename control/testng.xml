@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Data Driven Test Cases Test Suite" verbose="10" >
+    <parameter name="pdfngreport-properties" value="pdfng.report.properties" />
+    <test name="Data Driven Test Cases">
+        <classes>
+            <class name="com.kavinschool.zenphoto.tests.LoginWithCsvDataProviderTest"/>
+            <class name="com.kavinschool.zenphoto.tests.DataProviderTest"/>
+            <class name="com.kavinschool.zenphoto.tests.LoginWithCsvTest"/>
+            <class name="com.kavinschool.zenphoto.tests.TagsCreationWithTextTest"/>
+            <class name="com.kavinschool.zenphoto.tests.LoginWithExcelDataProvider"/>
+            <class name="com.kavinschool.zenphoto.tests.LoginWithExcelTest"/>
+            <class name="com.kavinschool.zenphoto.tests.OrderAlphaTest"/>
+            <class name="com.kavinschool.zenphoto.tests.LoginWithPropertiesTest"/>
+            <class name="com.kavinschool.zenphoto.tests.LoginWithCsvDataProviderGeneratePdfTest"/>
+        </classes>
+    </test>
+</suite>

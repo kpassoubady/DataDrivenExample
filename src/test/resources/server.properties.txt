@@ -1,0 +1,62 @@
+host=localhost
+port=4444
+url_plus=https://www.plusresources.org/
+url_ks=https://www.kavinschool.com
+url_gmail=https://www.gmail.com/
+mode=local
+userid=Student1
+password=Student1@Kavin~School
+school_name=Kavin School
+#key = value
+salary=$200,000.00
+spending = $220,000.00
+bonus = $22,000.00
+browserType=googlechrome
+url=http://plusresources.org
+
+
+#runType either local or remote
+#--> local runs in your machine
+#--> remote runs in using your selenium grid
+runType=remote
+
+#Google Chrome MAC Setup
+gc_browser_path=/Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+gc_driver_path=/Users/kangeyan.passoubady/tools/web_drivers/chromedriver
+
+#Firefox MAC Setup
+ff_browser_path=/Applications/Firefox.app/Contents/MacOS/firefox
+ff_driver_path=/Users/kangeyan.passoubady/tools/web_drivers/geckodriver
+
+url=http://plusresources.org
+#local grid
+#selenium_grid_hub=http://localhost:4444/wd/hub
+#zalenium grid
+selenium_grid_hub=http://ec2-3-222-135-81.compute-1.amazonaws.com:4445/wd/hub
+browserType=chrome
+#browserType=firefox
+#browserType=internet explorer
+
+#Capability
+# true or false are valid values
+#isCapabilityEnabled=true
+
+#Firefox Windows Setup
+#ff_browser_path=C:/Program Files (x86)/Mozilla Firefox/firefox.exe
+#ff_browser_path=C:/Program Files/Mozilla Firefox/firefox.exe
+#ff_driver_path=C:/tools/web_drivers/geckodriver.exe
+
+#Google Chrome Windows Setup
+#gc_browser_path=C:/Program Files (x86)/Google/Chrome/Application/chrome.exe
+#gc_browser_path=C:/Program Files/Google/Chrome/Application/chrome.exe
+#gc_driver_path=C:/tools/web_drivers/chromedriver.exe
+
+#IE Windows Setup
+#ie_browser_path=C:/Program Files (x86)/Internet Explorer/iexplore.exe
+#ie_browser_path=C:/Program Files/Internet Explorer/iexplore.exe
+#ie_driver_path=C:/tools/web_drivers/IEDriverServer.exe
+
+#Edge Windows Setup
+#edge_browser_path=C:/Program Files (x86)/Internet Explorer/iexplore.exe
+#edge_browser_path=C:/Program Files/Internet Explorer/iexplore.exe
+#edge_driver_path=C:/tools/IEDriverServer.exe
