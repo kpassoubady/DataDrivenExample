@@ -21,8 +21,8 @@ url=http://plusresources.org
 runType=remote
 
 #Google Chrome MAC Setup
-gc_browser_path=/Applications/Google Chrome.app/Contents/MacOS/Google Chrome
-gc_driver_path=/Users/kangeyan.passoubady/tools/web_drivers/chromedriver
+#gc_browser_path=/Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+#gc_driver_path=/Users/kangeyan.passoubady/tools/web_drivers/chromedriver
 
 #Firefox MAC Setup
 ff_browser_path=/Applications/Firefox.app/Contents/MacOS/firefox
@@ -30,9 +30,9 @@ ff_driver_path=/Users/kangeyan.passoubady/tools/web_drivers/geckodriver
 
 url=http://plusresources.org
 #local grid
-#selenium_grid_hub=http://localhost:4444/wd/hub
+selenium_grid_hub=http://localhost:4444/wd/hub
 #zalenium grid
-selenium_grid_hub=http://ec2-3-222-135-81.compute-1.amazonaws.com:4445/wd/hub
+#selenium_grid_hub=http://ec2-3-222-135-81.compute-1.amazonaws.com:4445/wd/hub
 browserType=chrome
 #browserType=firefox
 #browserType=internet explorer
@@ -47,9 +47,9 @@ browserType=chrome
 #ff_driver_path=C:/tools/web_drivers/geckodriver.exe
 
 #Google Chrome Windows Setup
-#gc_browser_path=C:/Program Files (x86)/Google/Chrome/Application/chrome.exe
+gc_browser_path=C:/Program Files (x86)/Google/Chrome/Application/chrome.exe
 #gc_browser_path=C:/Program Files/Google/Chrome/Application/chrome.exe
-#gc_driver_path=C:/tools/web_drivers/chromedriver.exe
+gc_driver_path=C:/tools/web_drivers/chromedriver.exe
 
 #IE Windows Setup
 #ie_browser_path=C:/Program Files (x86)/Internet Explorer/iexplore.exe
