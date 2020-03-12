@@ -244,6 +244,16 @@
             <type>maven-plugin</type>
         </dependency>
     </dependencies>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <url>http://ec2-54-221-104-253.compute-1.amazonaws.com:8081/repository/kavinschool-java-snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>nexus-releases</id>
+            <url>http://ec2-54-221-104-253.compute-1.amazonaws.com:8081/repository/kavinschool-java-releases/</url>
+        </repository>
+    </distributionManagement>
     <profiles>
         <profile>
             <id>run-test</id>
