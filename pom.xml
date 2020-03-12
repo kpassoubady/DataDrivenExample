@@ -256,6 +256,14 @@
                            <enabled>true</enabled>
                   </snapshots>
          </repository>
+         <repository>
+                  <id>kavinschool-internal-repo</id>
+                  <url>http://ec2-54-221-104-253.compute-1.amazonaws.com:8081/#auto/repository/repositories</url>
+         </repository>
+         <repository>
+                  <id>mvnrepository</id>
+                  <url>http://mvnrepository.com/artifact/</url>
+         </repository>
     </repositories>
     <distributionManagement>
         <snapshotRepository>
