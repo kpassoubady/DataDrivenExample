@@ -28,20 +28,58 @@
         <reportng-version>1.1.2</reportng-version>
         <htmlunit-driver-version>2.28.2</htmlunit-driver-version>
         <unirest-java>1.4.9</unirest-java>
+        <doclint>none</doclint>
     </properties>
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>${maven.compiler.source}</source>
-                    <target>${maven.compiler.target}</target>
-                    <testSource>${maven.compiler.source}</testSource>
-                    <testTarget>${maven.compiler.target}</testTarget>
-                </configuration>
-                <version>${maven-compiler-plugin.version}</version>
-            </plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <source>${maven.compiler.source}</source>
+                        <target>${maven.compiler.target}</target>
+                        <testSource>${maven.compiler.source}</testSource>
+                        <testTarget>${maven.compiler.target}</testTarget>
+                        <showDeprecation>false</showDeprecation>
+                        <compilerArgument>-Xlint:unchecked</compilerArgument>
+                    </configuration>
+                </plugin>
+                 <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <phase>deploy</phase>
+                            <goals>
+                                <goal>jar-no-fork</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${maven-javadoc-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>attach-javadocs</id>
+                            <phase>deploy</phase>
+                            <goals>
+                                <goal>jar-no-fork</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                 <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>${maven-deploy-plugin.version}</version>
+                    <!-- <configuration> -->
+                    <!-- <skip>true</skip> -->
+                    <!-- </configuration> -->
+                </plugin>
         </plugins>
     </build>
     <dependencies>
