@@ -31,7 +31,7 @@ node('win') {
         parallel junit: {
             junit '**/target/surefire-reports/TEST-*.xml'
         }, allure: {
-            allure jdk: '', report: 'target/allure-report', results: [[path: 'target/allure-results']]
+            allure jdk: 'JDK11-WIN', report: 'target/allure-report', results: [[path: 'target/allure-results']]
         }
 
         publishHTML([allowMissing: true, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'target/', reportFiles: 'surefire-reports/emailable-report.html, surefire-reports/index.html, extentreport/report.html,allure-report/index.html', reportName: 'Access Reports', reportTitles: 'TestNG Emailable Report, TestNG Outline Report, Extent HTML Report, Allure Report'])
