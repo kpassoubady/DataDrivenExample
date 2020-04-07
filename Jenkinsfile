@@ -35,7 +35,7 @@ node('win') {
         }
 
         publishHTML([allowMissing: true, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'target/', reportFiles: 'surefire-reports/emailable-report.html, surefire-reports/index.html, extentreport/report.html,allure-report/index.html', reportName: 'Access Reports', reportTitles: 'TestNG Emailable Report, TestNG Outline Report, Extent HTML Report, Allure Report'])
-        
+
     }
     stage('Archive') {
         archiveArtifacts allowEmptyArchive: true, artifacts: 'target/*.jar', fingerprint: true, onlyIfSuccessful: true
