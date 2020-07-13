@@ -18,15 +18,15 @@ url=http://plusresources.org
 #runType either local or remote
 #--> local runs in your machine
 #--> remote runs in using your selenium grid
-runType=remote
+runType=local
 
 #Google Chrome MAC Setup
-#gc_browser_path=/Applications/Google Chrome.app/Contents/MacOS/Google Chrome
-#gc_driver_path=/Users/kangeyan.passoubady/tools/web_drivers/chromedriver
+gc_browser_path=/Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+gc_driver_path=/Users/kang/tools/web_drivers/chromedriver
 
 #Firefox MAC Setup
-ff_browser_path=/Applications/Firefox.app/Contents/MacOS/firefox
-ff_driver_path=/Users/kangeyan.passoubady/tools/web_drivers/geckodriver
+#ff_browser_path=/Applications/Firefox.app/Contents/MacOS/firefox
+#ff_driver_path=/Users/kang/tools/web_drivers/geckodriver
 
 url=http://plusresources.org
 #local grid
@@ -47,9 +47,9 @@ browserType=chrome
 #ff_driver_path=C:/tools/web_drivers/geckodriver.exe
 
 #Google Chrome Windows Setup
-gc_browser_path=C:/Program Files (x86)/Google/Chrome/Application/chrome.exe
+#gc_browser_path=C:/Program Files (x86)/Google/Chrome/Application/chrome.exe
 #gc_browser_path=C:/Program Files/Google/Chrome/Application/chrome.exe
-gc_driver_path=C:/tools/web_drivers/chromedriver.exe
+#gc_driver_path=C:/tools/web_drivers/chromedriver.exe
 
 #IE Windows Setup
 #ie_browser_path=C:/Program Files (x86)/Internet Explorer/iexplore.exe
