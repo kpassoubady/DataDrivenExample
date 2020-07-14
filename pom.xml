@@ -39,18 +39,18 @@
     <build>
         <plugins>
             <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${maven-compiler-plugin.version}</version>
-                    <configuration>
-                        <source>${maven.compiler.source}</source>
-                        <target>${maven.compiler.target}</target>
-                        <testSource>${maven.compiler.source}</testSource>
-                        <testTarget>${maven.compiler.target}</testTarget>
-                        <showDeprecation>false</showDeprecation>
-                        <compilerArgument>-Xlint:unchecked</compilerArgument>
-                    </configuration>
-                </plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <testSource>${maven.compiler.source}</testSource>
+                    <testTarget>${maven.compiler.target}</testTarget>
+                    <showDeprecation>false</showDeprecation>
+                    <compilerArgument>-Xlint:unchecked</compilerArgument>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
     <dependencies>
@@ -95,6 +95,26 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>1.7.25</version>
+        </dependency>
+        <dependency>
+            <groupId>jfree</groupId>
+            <artifactId>jfreechart</artifactId>
+            <version>1.0.13</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.xmlgraphics</groupId>
+            <artifactId>fop</artifactId>
+            <version>2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.avalon.framework</groupId>
+            <artifactId>avalon-framework-api</artifactId>
+            <version>4.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.avalon.framework</groupId>
+            <artifactId>avalon-framework-impl</artifactId>
+            <version>4.3.1</version>
         </dependency>
         <dependency>
             <groupId>com.uttesh</groupId>
@@ -161,21 +181,21 @@
         </dependency>
     </dependencies>
     <repositories>
-         <repository>
-                  <id>oss.sonatype.org</id>
-                  <name>Sonatype Snapshot Repository</name>
-                  <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-                  <releases>
-                           <enabled>false</enabled>
-                  </releases>
-                  <snapshots>
-                           <enabled>true</enabled>
-                  </snapshots>
-         </repository>
-         <repository>
-                  <id>mvnrepository</id>
-                  <url>http://mvnrepository.com/artifact/</url>
-         </repository>
+        <repository>
+            <id>oss.sonatype.org</id>
+            <name>Sonatype Snapshot Repository</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>mvnrepository</id>
+            <url>http://mvnrepository.com/artifact/</url>
+        </repository>
     </repositories>
     <profiles>
         <profile>
@@ -326,12 +346,15 @@
                             <artifactId>maven-surefire-plugin</artifactId>
                             <version>${maven-surefire-plugin}</version>
                             <configuration>
+                                <skipTests>false</skipTests>
                                 <testFailureIgnore>true</testFailureIgnore>
+                                <useSystemClassLoader>false</useSystemClassLoader>
+                                <threadCount>1</threadCount>
                                 <argLine>-Xmx2048m</argLine>
                                 <systemPropertyVariables>
                                     <browserType>chrome</browserType>
                                 </systemPropertyVariables>
-                                <groups>pdfdp,order</groups>
+                                <groups>order</groups>
                                 <suiteXmlFiles>
                                     <suiteXmlFile>control/testng.xml</suiteXmlFile>
                                 </suiteXmlFiles>
@@ -350,6 +373,20 @@
                                     </property>
                                 </properties>
                             </configuration>
+                        </plugin>
+                        <plugin>
+                            <artifactId>maven-dependency-plugin</artifactId>
+                            <executions>
+                                <execution>
+                                    <phase>install</phase>
+                                    <goals>
+                                        <goal>copy-dependencies</goal>
+                                    </goals>
+                                    <configuration>
+                                        <outputDirectory>ext-lib</outputDirectory>
+                                    </configuration>
+                                </execution>
+                            </executions>
                         </plugin>
                     </plugins>
                 </pluginManagement>

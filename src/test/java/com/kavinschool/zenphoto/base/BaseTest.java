@@ -94,6 +94,5 @@ public class BaseTest {
             }
         }
         System.setProperty("mTestCaseName",String.format("%s(%s)", method.getName(), testCase));
-
     }
 }
