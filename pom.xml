@@ -26,7 +26,7 @@
         <maven.build.timestamp.format>yyyyMMdd_HHmm</maven.build.timestamp.format>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <mysql-connector-java-version>8.0.15</mysql-connector-java-version>
+        <mysql-connector-java-version>8.0.28</mysql-connector-java-version>
         <opencsv-version>2.4</opencsv-version>
         <poi-version>4.1.2</poi-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
